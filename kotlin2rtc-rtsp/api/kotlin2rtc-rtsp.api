@@ -1,0 +1,256 @@
+public abstract interface class io/github/mafischer/kotlin2rtc/rtsp/BackchannelAudio {
+	public abstract fun getTalking ()Z
+	public abstract fun setTalking (Z)V
+	public abstract fun start ()V
+	public abstract fun stop ()V
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioEvent : java/lang/Enum {
+	public static final field LINK_FAILED Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioEvent;
+	public static final field MICROPHONE_UNAVAILABLE Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioEvent;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioEvent;
+	public static fun values ()[Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioEvent;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioFactory {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioFactory$Companion;
+	public abstract fun create (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelLink;Lio/github/mafischer/kotlin2rtc/codec/PcmSource;Lkotlin/jvm/functions/Function1;)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelAudio;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioFactory$Companion {
+	public final fun getWithoutMicrophone ()Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelAudioFactory;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability$Companion;
+	public static final field RECHECK_MILLIS J
+	public fun <init> (ZLjava/lang/String;Ljava/lang/Integer;Ljava/util/List;Ljava/lang/Boolean;J)V
+	public synthetic fun <init> (ZLjava/lang/String;Ljava/lang/Integer;Ljava/util/List;Ljava/lang/Boolean;JILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/Integer;
+	public final fun component4 ()Ljava/util/List;
+	public final fun component5 ()Ljava/lang/Boolean;
+	public final fun component6 ()J
+	public final fun copy (ZLjava/lang/String;Ljava/lang/Integer;Ljava/util/List;Ljava/lang/Boolean;J)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;ZLjava/lang/String;Ljava/lang/Integer;Ljava/util/List;Ljava/lang/Boolean;JILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCheckedAt ()J
+	public final fun getClockRate ()Ljava/lang/Integer;
+	public final fun getCodec ()Ljava/lang/String;
+	public final fun getOffered ()Ljava/util/List;
+	public final fun getOnvifAudioOutput ()Ljava/lang/Boolean;
+	public final fun getSupported ()Z
+	public fun hashCode ()I
+	public final fun isStale (J)Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability$Companion {
+	public final fun of (Lio/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel;JLio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;
+	public static synthetic fun of$default (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability$Companion;Lio/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel;JLio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;
+	public final fun unsupported (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelError$Unsupported;JLio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;
+	public static synthetic fun unsupported$default (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability$Companion;Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelError$Unsupported;JLio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelCapability;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/rtsp/BackchannelEngine {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelEngine$Companion;
+	public fun closeLater (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelLink;)V
+	public abstract fun open (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun probe (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelEngine$Companion {
+	public final fun getUnavailable ()Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelEngine;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelEngine$DefaultImpls {
+	public static fun closeLater (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelEngine;Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelLink;)V
+}
+
+public abstract class io/github/mafischer/kotlin2rtc/rtsp/BackchannelError : java/lang/Exception {
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelError$Busy : io/github/mafischer/kotlin2rtc/rtsp/BackchannelError {
+	public fun <init> (I)V
+	public final fun getStatus ()I
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelError$Failed : io/github/mafischer/kotlin2rtc/rtsp/BackchannelError {
+	public fun <init> (Ljava/lang/Integer;)V
+	public final fun getStatus ()Ljava/lang/Integer;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelError$Unauthorized : io/github/mafischer/kotlin2rtc/rtsp/BackchannelError {
+	public fun <init> ()V
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelError$Unreachable : io/github/mafischer/kotlin2rtc/rtsp/BackchannelError {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelError$Unsupported : io/github/mafischer/kotlin2rtc/rtsp/BackchannelError {
+	public fun <init> ()V
+	public fun <init> (Ljava/util/List;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/util/List;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getOffered ()Ljava/util/List;
+	public final fun getStatus ()Ljava/lang/Integer;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/rtsp/BackchannelLink {
+	public abstract fun close ()V
+	public abstract fun getMedia ()Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;
+	public abstract fun getOnClosed ()Lkotlin/jvm/functions/Function0;
+	public abstract fun sendRtcp ([B)V
+	public abstract fun sendRtp ([B)V
+	public abstract fun setOnClosed (Lkotlin/jvm/functions/Function0;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelPump : io/github/mafischer/kotlin2rtc/rtsp/BackchannelAudio {
+	public static final field CNAME Ljava/lang/String;
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelPump$Companion;
+	public static final field RTCP_INTERVAL_MILLIS J
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelLink;Lio/github/mafischer/kotlin2rtc/codec/PcmSource;Lio/github/mafischer/kotlin2rtc/rtsp/TalkMicrophone;Lkotlin/jvm/functions/Function1;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;Lkotlin/jvm/functions/Function0;Lio/github/mafischer/kotlin2rtc/core/Clock;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Logger;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelLink;Lio/github/mafischer/kotlin2rtc/codec/PcmSource;Lio/github/mafischer/kotlin2rtc/rtsp/TalkMicrophone;Lkotlin/jvm/functions/Function1;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;Lkotlin/jvm/functions/Function0;Lio/github/mafischer/kotlin2rtc/core/Clock;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Logger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getTalking ()Z
+	public fun setTalking (Z)V
+	public fun start ()V
+	public fun stop ()V
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelPump$Companion {
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/BackchannelSdp {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelSdp;
+	public final fun parse (Ljava/lang/String;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel;
+	public final fun resolve (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/Rtsp {
+	public static final field BACKCHANNEL_REQUIRE Ljava/lang/String;
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp;
+	public static final field USER_AGENT Ljava/lang/String;
+	public final fun read (Ljava/io/InputStream;I)Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming;
+	public final fun request (Ljava/lang/String;Ljava/lang/String;ILjava/util/List;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	public static synthetic fun request$default (Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp;Ljava/lang/String;Ljava/lang/String;ILjava/util/List;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming {
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Packet : io/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming {
+	public fun <init> (II)V
+	public final fun component1 ()I
+	public final fun component2 ()I
+	public final fun copy (II)Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Packet;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Packet;IIILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Packet;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChannel ()I
+	public final fun getSize ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Request : io/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Request;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Response : io/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming {
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;)V
+	public final fun component1 ()Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;
+	public final fun copy (Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;)Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Response;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Response;Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/rtsp/Rtsp$Incoming$Response;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getResponse ()Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/RtspBackchannelClient {
+	public static final field CONNECT_TIMEOUT_MILLIS I
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/rtsp/RtspBackchannelClient$Companion;
+	public static final field DEFAULT_PORT I
+	public static final field READ_TIMEOUT_MILLIS I
+	public fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/security/SecureRandom;IIJLjava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Logger;)V
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/security/SecureRandom;IIJLjava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Logger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun describe ()Lio/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel;
+	public final fun open ()Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelLink;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/RtspBackchannelClient$Companion {
+	public final fun interleavedChannels (Ljava/lang/String;)Lkotlin/Pair;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/RtspBackchannelEngine : io/github/mafischer/kotlin2rtc/rtsp/BackchannelEngine {
+	public fun <init> (Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineDispatcher;Lio/github/mafischer/kotlin2rtc/core/Logger;)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;Lkotlinx/coroutines/CoroutineDispatcher;Lio/github/mafischer/kotlin2rtc/core/Logger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun closeLater (Lio/github/mafischer/kotlin2rtc/rtsp/BackchannelLink;)V
+	public fun open (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun probe (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/RtspResponse {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse$Companion;
+	public static final field DEFAULT_SESSION_TIMEOUT_SECONDS I
+	public fun <init> (ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;)V
+	public synthetic fun <init> (ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun copy (ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;ILjava/lang/String;Ljava/util/Map;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/rtsp/RtspResponse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()Ljava/lang/String;
+	public final fun getCseq ()Ljava/lang/Integer;
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getReason ()Ljava/lang/String;
+	public final fun getSession ()Ljava/lang/String;
+	public final fun getSessionTimeoutSeconds ()I
+	public final fun getStatus ()I
+	public fun hashCode ()I
+	public final fun header (Ljava/lang/String;)Ljava/lang/String;
+	public final fun headers (Ljava/lang/String;)Ljava/util/List;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/RtspResponse$Companion {
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel {
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Ljava/util/List;Ljava/lang/String;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Ljava/util/List;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;
+	public final fun component2 ()Ljava/util/List;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Ljava/util/List;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel;Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/rtsp/SdpBackchannel;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAggregate ()Ljava/lang/String;
+	public final fun getMedia ()Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;
+	public final fun getOffered ()Ljava/util/List;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/rtsp/TalkMicrophone {
+	public abstract fun close ()V
+	public abstract fun open (Ljava/util/List;)Ljava/lang/Integer;
+	public abstract fun read ([F)Z
+}
+
+public final class io/github/mafischer/kotlin2rtc/rtsp/TalkMicrophone$None : io/github/mafischer/kotlin2rtc/rtsp/TalkMicrophone {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/rtsp/TalkMicrophone$None;
+	public fun close ()V
+	public fun open (Ljava/util/List;)Ljava/lang/Integer;
+	public fun read ([F)Z
+}
+
