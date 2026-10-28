@@ -1,0 +1,286 @@
+public abstract interface class io/github/mafischer/kotlin2rtc/codec/AacEncoder {
+	public abstract fun close ()V
+	public abstract fun encode ([S)Ljava/util/List;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/codec/AacEncoderFactory {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory$Companion;
+	public abstract fun create (III)Lio/github/mafischer/kotlin2rtc/codec/AacEncoder;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/AacEncoderFactory$Companion {
+	public final fun getNone ()Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/AacFormat {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/AacFormat$Companion;
+	public fun <init> (IIZII)V
+	public synthetic fun <init> (IIZIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()I
+	public final fun component2 ()I
+	public final fun component3 ()Z
+	public final fun component4 ()I
+	public final fun component5 ()I
+	public final fun copy (IIZII)Lio/github/mafischer/kotlin2rtc/codec/AacFormat;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/codec/AacFormat;IIZIIILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/codec/AacFormat;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBitRate ()I
+	public final fun getChannels ()I
+	public final fun getIndexLength ()I
+	public final fun getLatm ()Z
+	public final fun getMaxAccessUnit ()I
+	public final fun getSampleRate ()I
+	public final fun getSizeLength ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/AacFormat$Companion {
+	public final fun of (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;)Lio/github/mafischer/kotlin2rtc/codec/AacFormat;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/AacKt {
+	public static final field AAC_FRAME_SAMPLES I
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/AacPacketizer {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/codec/AacPacketizer;
+	public final fun payload ([BLio/github/mafischer/kotlin2rtc/codec/AacFormat;)[B
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/AacPayloads : io/github/mafischer/kotlin2rtc/codec/PayloadEncoder {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/AacPayloads$Companion;
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/codec/AacEncoder;Lio/github/mafischer/kotlin2rtc/codec/AacFormat;Lio/github/mafischer/kotlin2rtc/core/Logger;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/codec/AacEncoder;Lio/github/mafischer/kotlin2rtc/codec/AacFormat;Lio/github/mafischer/kotlin2rtc/core/Logger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun close ()V
+	public fun encode ([F)Ljava/util/List;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/AacPayloads$Companion {
+	public final fun of (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;Lio/github/mafischer/kotlin2rtc/core/Logger;)Lio/github/mafischer/kotlin2rtc/codec/AacPayloads;
+	public static synthetic fun of$default (Lio/github/mafischer/kotlin2rtc/codec/AacPayloads$Companion;Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;Lio/github/mafischer/kotlin2rtc/core/Logger;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/codec/AacPayloads;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/BackchannelCodec : java/lang/Enum {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec$Companion;
+	public static final field G726 Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public static final field L16 Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public static final field MP4A_LATM Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public static final field MPEG4_GENERIC Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public static final field PCMA Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public static final field PCMU Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public final fun getEncoding ()Ljava/lang/String;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun isG711 ()Z
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public static fun values ()[Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/BackchannelCodec$Companion {
+	public final fun fromEncoding (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/BackchannelEncoder {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/BackchannelEncoder$Companion;
+	public static final field MICROPHONE_GAIN F
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;ILio/github/mafischer/kotlin2rtc/core/Logger;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;ILio/github/mafischer/kotlin2rtc/core/Logger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun close ()V
+	public final fun getMedia ()Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;
+	public final fun getMicrophoneRates ()Ljava/util/List;
+	public final fun getRtp ()Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer;
+	public final fun getSamples ()I
+	public final fun getSoundRate ()I
+	public final fun microphoneRate (Ljava/lang/Integer;)V
+	public final fun packet ([F[F)[B
+	public final fun packets ([F[F)Ljava/util/List;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/BackchannelEncoder$Companion {
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/BackchannelMedia {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia$Companion;
+	public static final field PACKETS_PER_SECOND I
+	public fun <init> (Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;IILjava/lang/String;ILjava/util/Map;)V
+	public synthetic fun <init> (Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;IILjava/lang/String;ILjava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public final fun component3 ()I
+	public final fun component4 ()I
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()I
+	public final fun component7 ()Ljava/util/Map;
+	public final fun copy (Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;IILjava/lang/String;ILjava/util/Map;)Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;IILjava/lang/String;ILjava/util/Map;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getChannels ()I
+	public final fun getClockRate ()I
+	public final fun getCodec ()Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;
+	public final fun getControl ()Ljava/lang/String;
+	public final fun getEncoding ()Ljava/lang/String;
+	public final fun getFmtp ()Ljava/util/Map;
+	public final fun getLabel ()Ljava/lang/String;
+	public final fun getPayloadType ()I
+	public final fun getSamplesPerPacket ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/BackchannelMedia$Companion {
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/BufferPcmSource : io/github/mafischer/kotlin2rtc/codec/PcmSource {
+	public fun <init> ([FI)V
+	public synthetic fun <init> ([FIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getSampleRate ()I
+	public final fun isFinished ()Z
+	public fun render ([F)Z
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/Decimator {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/Decimator$Companion;
+	public static final field TAPS_PER_PHASE I
+	public fun <init> (II)V
+	public synthetic fun <init> (IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getFactor ()I
+	public final fun process ([FI[F)I
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/Decimator$Companion {
+	public final fun design (ID)[F
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G711 {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/codec/G711;
+	public final fun alaw (I)I
+	public final fun alawToLinear (I)I
+	public final fun decode (Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;[B)[S
+	public final fun encode (Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;[F[BI)V
+	public static synthetic fun encode$default (Lio/github/mafischer/kotlin2rtc/codec/G711;Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;[F[BIILjava/lang/Object;)V
+	public final fun ulaw (I)I
+	public final fun ulawToLinear (I)I
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G711Payloads : io/github/mafischer/kotlin2rtc/codec/PayloadEncoder {
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/codec/BackchannelCodec;)V
+	public fun close ()V
+	public fun encode ([F)Ljava/util/List;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G726 {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/G726$Companion;
+	public fun <init> (I)V
+	public final fun decode (I)I
+	public final fun encode (I)I
+	public final fun getBits ()I
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G726$Companion {
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G726Format {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/G726Format$Companion;
+	public fun <init> (IZ)V
+	public final fun component1 ()I
+	public final fun component2 ()Z
+	public final fun copy (IZ)Lio/github/mafischer/kotlin2rtc/codec/G726Format;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/codec/G726Format;IZILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/codec/G726Format;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBigEndian ()Z
+	public final fun getBits ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G726Format$Companion {
+	public final fun of (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/codec/G726Format;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G726Packing {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/codec/G726Packing;
+	public final fun pack ([IIZ)[B
+	public final fun unpack ([BIZ)[I
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/G726Payloads : io/github/mafischer/kotlin2rtc/codec/PayloadEncoder {
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/codec/G726Format;)V
+	public fun close ()V
+	public fun encode ([F)Ljava/util/List;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/Interleaved {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/codec/Interleaved;
+	public static final field MAGIC I
+	public final fun frame (I[B)[B
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/L16Payloads : io/github/mafischer/kotlin2rtc/codec/PayloadEncoder {
+	public fun <init> (I)V
+	public fun close ()V
+	public fun encode ([F)Ljava/util/List;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/Payload {
+	public fun <init> ([BILjava/lang/Boolean;)V
+	public synthetic fun <init> ([BILjava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getBytes ()[B
+	public final fun getMarker ()Ljava/lang/Boolean;
+	public final fun getSamples ()I
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/codec/PayloadEncoder {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/PayloadEncoder$Companion;
+	public fun close ()V
+	public abstract fun encode ([F)Ljava/util/List;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/PayloadEncoder$Companion {
+	public final fun of (Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;Lio/github/mafischer/kotlin2rtc/core/Logger;)Lio/github/mafischer/kotlin2rtc/codec/PayloadEncoder;
+	public static synthetic fun of$default (Lio/github/mafischer/kotlin2rtc/codec/PayloadEncoder$Companion;Lio/github/mafischer/kotlin2rtc/codec/BackchannelMedia;Lio/github/mafischer/kotlin2rtc/codec/AacEncoderFactory;Lio/github/mafischer/kotlin2rtc/core/Logger;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/codec/PayloadEncoder;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/PayloadEncoder$DefaultImpls {
+	public static fun close (Lio/github/mafischer/kotlin2rtc/codec/PayloadEncoder;)V
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/codec/PcmSource {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/PcmSource$Companion;
+	public static final field DEFAULT_SAMPLE_RATE I
+	public fun getSampleRate ()I
+	public abstract fun render ([F)Z
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/PcmSource$Companion {
+	public static final field DEFAULT_SAMPLE_RATE I
+	public final fun getSilence ()Lio/github/mafischer/kotlin2rtc/codec/PcmSource;
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/PcmSource$DefaultImpls {
+	public static fun getSampleRate (Lio/github/mafischer/kotlin2rtc/codec/PcmSource;)I
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/Rtcp {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/codec/Rtcp;
+	public final fun senderReport (Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer;JLjava/lang/String;)[B
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/RtpPacketizer {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer$Companion;
+	public static final field HEADER_BYTES I
+	public static final field VERSION I
+	public fun <init> (IIII)V
+	public final fun getNextTimestamp ()I
+	public final fun getOctetCount ()J
+	public final fun getPacketCount ()J
+	public final fun getSsrc ()I
+	public final fun packet ([BILjava/lang/Boolean;)[B
+	public static synthetic fun packet$default (Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer;[BILjava/lang/Boolean;ILjava/lang/Object;)[B
+	public final fun skip (I)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/codec/RtpPacketizer$Companion {
+	public final fun random (ILjava/security/SecureRandom;)Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer;
+	public static synthetic fun random$default (Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer$Companion;ILjava/security/SecureRandom;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/codec/RtpPacketizer;
+}
+
