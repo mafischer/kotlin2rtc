@@ -11,6 +11,22 @@ plugins {
 /** The published libraries (the CLI is a sample, the Tapo module has no code yet) */
 val libraryModules = setOf("kotlin2rtc-core", "kotlin2rtc-codec", "kotlin2rtc-onvif", "kotlin2rtc-rtsp")
 
+// Every resolved dependency is pinned in a gradle.lockfile per module (Trivy reads them): after a dependency change
+// run `./gradlew resolveAndLockAll --write-locks`
+allprojects {
+    dependencyLocking { lockAllConfigurations() }
+}
+
+tasks.register("resolveAndLockAll") {
+    group = "help"
+    description = "Resolves every configuration of every module (with --write-locks: rewrites the lockfiles)"
+    notCompatibleWithConfigurationCache("resolves configurations at execution time")
+    doFirst { require(gradle.startParameter.isWriteDependencyLocks) { "run with --write-locks" } }
+    doLast {
+        allprojects.forEach { project -> project.configurations.filter { it.isCanBeResolved }.forEach { it.resolve() } }
+    }
+}
+
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "org.jlleitschuh.gradle.ktlint")
@@ -72,7 +88,7 @@ dependencies {
 tasks.register("coverage") {
     group = "verification"
     description = "Writes the aggregated Kover XML and HTML coverage reports"
-    dependsOn("koverXmlReport", "koverHtmlReport")
+    dependsOn("koverXmlReport", "koverHtmlReport", "koverVerify")
 }
 
 // `./gradlew build` also writes the coverage report
@@ -86,9 +102,15 @@ tasks.named("build") { dependsOn("coverage") }
 
 kover {
     reports {
+        // `./gradlew build` fails below these (aggregated over every module): keep coverage where it is
+        verify {
+            rule("Line coverage") { minBound(90) }
+            rule("Branch coverage") { minBound(75, kotlinx.kover.gradle.plugin.dsl.CoverageUnit.BRANCH) }
+        }
         filters {
             // The shared test fakes are not library code
             excludes { packages("io.github.mafischer.kotlin2rtc.testing") }
         }
     }
 }
+
