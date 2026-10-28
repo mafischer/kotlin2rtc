@@ -1,0 +1,470 @@
+public final class io/github/mafischer/kotlin2rtc/onvif/AudioOutputConfiguration {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()I
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()I
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;I)Lio/github/mafischer/kotlin2rtc/onvif/AudioOutputConfiguration;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/AudioOutputConfiguration;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/AudioOutputConfiguration;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getName ()Ljava/lang/String;
+	public final fun getOutputLevel ()I
+	public final fun getOutputToken ()Ljava/lang/String;
+	public final fun getSendPrimacy ()Ljava/lang/String;
+	public final fun getToken ()Ljava/lang/String;
+	public final fun getUseCount ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/CameraFingerprint {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/CameraFingerprint$Companion;
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/CameraFingerprint;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/CameraFingerprint;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/CameraFingerprint;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEndpoint ()Ljava/lang/String;
+	public final fun getHardware ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/CameraFingerprint$Companion {
+	public final fun of (Lio/github/mafischer/kotlin2rtc/onvif/DiscoveredDevice;)Lio/github/mafischer/kotlin2rtc/onvif/CameraFingerprint;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/CameraIdentity {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity;
+	public final fun normalize (Ljava/lang/String;)Ljava/lang/String;
+	public final fun sameModel (Ljava/lang/String;Ljava/lang/String;)Z
+	public final fun trust (Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/onvif/CameraFingerprint;ZLjava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust : java/lang/Enum {
+	public static final field FIRST_USE Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust;
+	public static final field MISMATCH Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust;
+	public static final field UNVERIFIED Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust;
+	public static final field VERIFIED Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust;
+	public static fun values ()[Lio/github/mafischer/kotlin2rtc/onvif/CameraIdentity$Trust;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/onvif/CameraProbe {
+	public abstract fun answers (Ljava/net/InetAddress;Lio/github/mafischer/kotlin2rtc/onvif/ProbeTarget;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public abstract fun identify (Ljava/net/InetAddress;Lio/github/mafischer/kotlin2rtc/onvif/ProbeTarget;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/onvif/DeviceDiscovery {
+	public abstract fun discover (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/DiscoveredDevice {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()I
+	public final fun component6 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/DiscoveredDevice;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/DiscoveredDevice;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/DiscoveredDevice;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDeviceUrl ()Ljava/lang/String;
+	public final fun getEndpoint ()Ljava/lang/String;
+	public final fun getHardware ()Ljava/lang/String;
+	public final fun getHost ()Ljava/lang/String;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getPort ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/onvif/MulticastLock {
+	public abstract fun acquire ()V
+	public abstract fun release ()V
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/MulticastLock$None : io/github/mafischer/kotlin2rtc/onvif/MulticastLock {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/MulticastLock$None;
+	public fun acquire ()V
+	public fun release ()V
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/NetworkCameraProbe : io/github/mafischer/kotlin2rtc/onvif/CameraProbe {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/NetworkCameraProbe$Companion;
+	public static final field DEFAULT_TIMEOUT_MILLIS I
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/core/HttpTransport;Lkotlin/jvm/functions/Function1;II)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/core/HttpTransport;Lkotlin/jvm/functions/Function1;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun answers (Ljava/net/InetAddress;Lio/github/mafischer/kotlin2rtc/onvif/ProbeTarget;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public fun identify (Ljava/net/InetAddress;Lio/github/mafischer/kotlin2rtc/onvif/ProbeTarget;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/NetworkCameraProbe$Companion {
+	public final fun rtspPort (Ljava/lang/String;)I
+	public final fun tcpProbe (Ljava/net/InetAddress;IILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun tcpProbe$default (Lio/github/mafischer/kotlin2rtc/onvif/NetworkCameraProbe$Companion;Ljava/net/InetAddress;IILkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifClient {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/OnvifClient$Companion;
+	public static final field PTZ_TIMEOUT_MILLIS J
+	public static final field TIMEOUT_MILLIS J
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/core/HttpTransport;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Credentials;Lio/github/mafischer/kotlin2rtc/core/Clock;Ljava/security/SecureRandom;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/core/HttpTransport;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Credentials;Lio/github/mafischer/kotlin2rtc/core/Clock;Ljava/security/SecureRandom;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun call (Ljava/lang/String;Ljava/lang/String;ZJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static synthetic fun call$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifClient;Ljava/lang/String;Ljava/lang/String;ZJLkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+	public final fun capabilities (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun continuousMove (Ljava/lang/String;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/onvif/PtzVelocity;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun deviceInformation (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun endpoints (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun getClockOffsetMillis ()J
+	public final fun getClockSynced ()Z
+	public final fun getDeviceUrl ()Ljava/lang/String;
+	public final fun profiles (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun ptzZoomPosition (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun ptzZoomSupport (Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun services (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun snapshotUri (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun stop (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun streamUri (Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public final fun syncClock (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifClient$Companion {
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifDeviceInformation {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifDeviceInformation;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifDeviceInformation;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifDeviceInformation;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDisplayName ()Ljava/lang/String;
+	public final fun getFirmwareVersion ()Ljava/lang/String;
+	public final fun getHardwareId ()Ljava/lang/String;
+	public final fun getManufacturer ()Ljava/lang/String;
+	public final fun getModel ()Ljava/lang/String;
+	public final fun getSerialNumber ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifEndpoints {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifEndpoints;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifEndpoints;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifEndpoints;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAudioOutputs ()Ljava/lang/Integer;
+	public final fun getEventsUrl ()Ljava/lang/String;
+	public final fun getMediaUrl ()Ljava/lang/String;
+	public final fun getPtzUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class io/github/mafischer/kotlin2rtc/onvif/OnvifError : java/lang/Exception {
+	public synthetic fun <init> (Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifError$Fault : io/github/mafischer/kotlin2rtc/onvif/OnvifError {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$Fault;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$Fault;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$Fault;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCode ()Ljava/lang/String;
+	public final fun getReason ()Ljava/lang/String;
+	public final fun getSubcode ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifError$Http : io/github/mafischer/kotlin2rtc/onvif/OnvifError {
+	public fun <init> (I)V
+	public final fun component1 ()I
+	public final fun copy (I)Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$Http;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$Http;IILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$Http;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getStatus ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifError$InvalidResponse : io/github/mafischer/kotlin2rtc/onvif/OnvifError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$InvalidResponse;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$InvalidResponse;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$InvalidResponse;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDetail ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifError$NotLocal : io/github/mafischer/kotlin2rtc/onvif/OnvifError {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$NotLocal;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifError$Unauthorized : io/github/mafischer/kotlin2rtc/onvif/OnvifError {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/OnvifError$Unauthorized;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifError$Unreachable : io/github/mafischer/kotlin2rtc/onvif/OnvifError {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/Throwable;)V
+	public synthetic fun <init> (Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifParser {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/OnvifParser;
+	public final fun capabilities (Lio/github/mafischer/kotlin2rtc/core/XmlElement;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifEndpoints;
+	public final fun deviceInformation (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifDeviceInformation;
+	public final fun endpointReference (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Ljava/lang/String;
+	public final fun fault (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifError;
+	public final fun mediaUri (Lio/github/mafischer/kotlin2rtc/core/XmlElement;Ljava/lang/String;)Ljava/lang/String;
+	public final fun profiles (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Ljava/util/List;
+	public final fun ptzZoomPosition (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Ljava/lang/Double;
+	public final fun ptzZoomSupport (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Lio/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport;
+	public final fun services (Lio/github/mafischer/kotlin2rtc/core/XmlElement;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifEndpoints;
+	public final fun systemDateAndTime (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Ljava/lang/Long;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifProfile {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ZZ)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()I
+	public final fun component4 ()I
+	public final fun component5 ()Ljava/lang/String;
+	public final fun component6 ()Z
+	public final fun component7 ()Z
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ZZ)Lio/github/mafischer/kotlin2rtc/onvif/OnvifProfile;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifProfile;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ZZILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/OnvifProfile;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getEncoding ()Ljava/lang/String;
+	public final fun getHasAudioOutput ()Z
+	public final fun getHasPtz ()Z
+	public final fun getHasVideo ()Z
+	public final fun getHeight ()I
+	public final fun getName ()Ljava/lang/String;
+	public final fun getToken ()Ljava/lang/String;
+	public final fun getWidth ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifSoap {
+	public static final field CONTENT_TYPE Ljava/lang/String;
+	public static final field GET_CAPABILITIES Ljava/lang/String;
+	public static final field GET_DEVICE_INFORMATION Ljava/lang/String;
+	public static final field GET_ENDPOINT_REFERENCE Ljava/lang/String;
+	public static final field GET_NODES Ljava/lang/String;
+	public static final field GET_PROFILES Ljava/lang/String;
+	public static final field GET_SERVICES Ljava/lang/String;
+	public static final field GET_SYSTEM_DATE_AND_TIME Ljava/lang/String;
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/OnvifSoap;
+	public final fun continuousMove (Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/onvif/PtzVelocity;)Ljava/lang/String;
+	public final fun created (J)Ljava/lang/String;
+	public final fun envelope (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	public static synthetic fun envelope$default (Lio/github/mafischer/kotlin2rtc/onvif/OnvifSoap;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+	public final fun getSnapshotUri (Ljava/lang/String;)Ljava/lang/String;
+	public final fun getStatus (Ljava/lang/String;)Ljava/lang/String;
+	public final fun getStreamUri (Ljava/lang/String;)Ljava/lang/String;
+	public final fun nonce (Ljava/security/SecureRandom;)[B
+	public final fun passwordDigest (Ljava/lang/String;Ljava/lang/String;[B)Ljava/lang/String;
+	public final fun securityHeader (Lio/github/mafischer/kotlin2rtc/core/Credentials;Ljava/lang/String;[B)Ljava/lang/String;
+	public final fun stop (Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifSpeakerLevel : io/github/mafischer/kotlin2rtc/onvif/SpeakerLevel {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/OnvifSpeakerLevel$Companion;
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/onvif/OnvifClient;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Logger;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/onvif/OnvifClient;Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Logger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun set (FLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifSpeakerLevel$Companion {
+	public final fun getDEFAULT_RANGE ()Lkotlin/ranges/IntRange;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OnvifUrls {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/OnvifUrls;
+	public final fun deviceService (Ljava/lang/String;I)Ljava/lang/String;
+	public final fun onHost (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+	public final fun sibling (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OpticalZoom {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/OpticalZoom$Companion;
+	public static final field EDGE D
+	public fun <init> (ZLjava/lang/Double;)V
+	public synthetic fun <init> (ZLjava/lang/Double;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun component2 ()Ljava/lang/Double;
+	public final fun copy (ZLjava/lang/Double;)Lio/github/mafischer/kotlin2rtc/onvif/OpticalZoom;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/OpticalZoom;ZLjava/lang/Double;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/OpticalZoom;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAtClosest ()Z
+	public final fun getAtWidest ()Z
+	public final fun getAvailable ()Z
+	public final fun getLevel ()Ljava/lang/Double;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/OpticalZoom$Companion {
+	public final fun getNONE ()Lio/github/mafischer/kotlin2rtc/onvif/OpticalZoom;
+	public final fun getUNKNOWN ()Lio/github/mafischer/kotlin2rtc/onvif/OpticalZoom;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/ProbeTarget {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/ProbeTarget;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/ProbeTarget;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/ProbeTarget;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDeviceUrl ()Ljava/lang/String;
+	public final fun getStreamUri ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/PtzDirection : java/lang/Enum {
+	public static final field DOWN Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+	public static final field LEFT Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+	public static final field RIGHT Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+	public static final field UP Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+	public static final field ZOOM_IN Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+	public static final field ZOOM_OUT Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getVelocity ()Lio/github/mafischer/kotlin2rtc/onvif/PtzVelocity;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+	public static fun values ()[Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/PtzKt {
+	public static final field NUDGE_MILLIS J
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/PtzSession {
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/onvif/OnvifClient;Ljava/lang/String;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function1;Lio/github/mafischer/kotlin2rtc/core/Logger;Lkotlin/jvm/functions/Function0;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/onvif/OnvifClient;Ljava/lang/String;Ljava/lang/String;Lkotlinx/coroutines/CoroutineScope;Lkotlin/jvm/functions/Function1;Lio/github/mafischer/kotlin2rtc/core/Logger;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getOpticalZoom ()Lkotlinx/coroutines/flow/StateFlow;
+	public final fun move (Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;)V
+	public final fun move (Lio/github/mafischer/kotlin2rtc/onvif/PtzVelocity;)V
+	public final fun nudge (Lio/github/mafischer/kotlin2rtc/onvif/PtzDirection;)V
+	public final fun probeZoom ()V
+	public final fun refreshZoom ()V
+	public final fun reset ()V
+	public final fun stop ()V
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/PtzVelocity {
+	public fun <init> ()V
+	public fun <init> (DDD)V
+	public synthetic fun <init> (DDDILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()D
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun copy (DDD)Lio/github/mafischer/kotlin2rtc/onvif/PtzVelocity;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/PtzVelocity;DDDILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/PtzVelocity;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPan ()D
+	public final fun getTilt ()D
+	public final fun getZoom ()D
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport$Companion;
+	public fun <init> (ZDD)V
+	public synthetic fun <init> (ZDDILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun component2 ()D
+	public final fun component3 ()D
+	public final fun copy (ZDD)Lio/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport;ZDDILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMax ()D
+	public final fun getMin ()D
+	public final fun getOptical ()Z
+	public fun hashCode ()I
+	public final fun normalized (D)D
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport$Companion {
+	public final fun getNONE ()Lio/github/mafischer/kotlin2rtc/onvif/PtzZoomSupport;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/onvif/SpeakerLevel {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/SpeakerLevel$Companion;
+	public abstract fun set (FLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/SpeakerLevel$Companion {
+	public final fun getNone ()Lio/github/mafischer/kotlin2rtc/onvif/SpeakerLevel;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/SpeakerLevelSoap {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/SpeakerLevelSoap;
+	public static final field MEDIA2_NAMESPACE Ljava/lang/String;
+	public final fun configurations (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Ljava/util/List;
+	public final fun getConfigurations (Z)Ljava/lang/String;
+	public final fun getOptions (ZLjava/lang/String;)Ljava/lang/String;
+	public final fun levelRange (Lio/github/mafischer/kotlin2rtc/core/XmlElement;)Lkotlin/ranges/IntRange;
+	public final fun media2Url (Lio/github/mafischer/kotlin2rtc/core/XmlElement;Ljava/lang/String;)Ljava/lang/String;
+	public final fun set (ZLio/github/mafischer/kotlin2rtc/onvif/AudioOutputConfiguration;)Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/WsDiscovery : io/github/mafischer/kotlin2rtc/onvif/DeviceDiscovery {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/onvif/WsDiscovery$Companion;
+	public static final field DEFAULT_TIMEOUT_MILLIS J
+	public static final field MULTICAST_ADDRESS Ljava/lang/String;
+	public static final field PORT I
+	public fun <init> (Lio/github/mafischer/kotlin2rtc/onvif/MulticastLock;Lkotlin/jvm/functions/Function1;Ljava/net/InetSocketAddress;Lio/github/mafischer/kotlin2rtc/core/Clock;)V
+	public synthetic fun <init> (Lio/github/mafischer/kotlin2rtc/onvif/MulticastLock;Lkotlin/jvm/functions/Function1;Ljava/net/InetSocketAddress;Lio/github/mafischer/kotlin2rtc/core/Clock;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun discover (JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/WsDiscovery$Companion {
+}
+
+public final class io/github/mafischer/kotlin2rtc/onvif/WsDiscoveryMessages {
+	public static final field DEFAULT_HARDWARE Ljava/lang/String;
+	public static final field DEFAULT_NAME Ljava/lang/String;
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/onvif/WsDiscoveryMessages;
+	public final fun parse (Ljava/lang/String;)Ljava/util/List;
+	public final fun probe (Ljava/lang/String;)Ljava/lang/String;
+	public static synthetic fun probe$default (Lio/github/mafischer/kotlin2rtc/onvif/WsDiscoveryMessages;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+}
+
