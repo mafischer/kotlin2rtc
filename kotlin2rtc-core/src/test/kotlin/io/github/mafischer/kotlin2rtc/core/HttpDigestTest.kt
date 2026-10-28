@@ -27,12 +27,26 @@ class HttpDigestTest {
     @Test
     fun `the Amcrest camera's challenge is read`() {
         val challenge = HttpDigest.parseChallenge(Fixtures.read("amcrest-digest-challenge.txt").trim())!!
-        assertEquals(HttpDigest.Challenge("Login to AMC0000000000000000", "b252aWYtZGlnZXN0OjY4MDgxOTY2NzMw", "auth", "", "MD5"), challenge)
+        assertEquals(HttpDigest.Challenge("Login to AMC0000000000000000", "b252aWYtZGlnZXN0OjY4MDgxOTY2NzMw", "auth", "", null), challenge)
         val header = HttpDigest.authorization(challenge, Credentials("admin", "pw"), "POST", "/onvif/device_service", "abc", nonceCount = 2)
         val ha1 = md5("admin:Login to AMC0000000000000000:pw")
         val ha2 = md5("POST:/onvif/device_service")
         assertTrue(header.contains("response=\"${md5("$ha1:b252aWYtZGlnZXN0OjY4MDgxOTY2NzMw:00000002:abc:auth:$ha2")}\""))
         assertTrue(header.contains("nc=00000002"))
+    }
+
+    @Test
+    fun `the algorithm is echoed only when the camera named it (TP-Link Tapo refuses an unasked algorithm=MD5)`() {
+        // A Tapo C210 (firmware 1.2.7) answers 401 to the right response when the header adds algorithm=MD5
+        val tapo = HttpDigest.parseChallenge("Digest realm=\"TP-LINK IP-Camera\", nonce=\"fb93f59432fa328235d29ba4a23cb7fa\"")!!
+        assertNull(tapo.algorithm)
+        val header = HttpDigest.authorization(tapo, Credentials("u", "p"), "DESCRIBE", "rtsp://cam/stream1", "c")
+        assertTrue(!header.contains("algorithm"), header)
+        assertTrue(header.contains("response=\"${md5("${md5("u:TP-LINK IP-Camera:p")}:fb93f59432fa328235d29ba4a23cb7fa:${md5("DESCRIBE:rtsp://cam/stream1")}")}\""))
+
+        val named = HttpDigest.parseChallenge("Digest realm=\"r\", nonce=\"n\", algorithm=\"MD5\"")!!
+        assertEquals("MD5", named.algorithm)
+        assertTrue(HttpDigest.authorization(named, Credentials("u", "p"), "GET", "/", "c").endsWith(", algorithm=MD5"))
     }
 
     @Test

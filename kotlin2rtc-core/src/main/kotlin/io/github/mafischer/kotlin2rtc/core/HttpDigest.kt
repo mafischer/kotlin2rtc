@@ -15,7 +15,11 @@ public object HttpDigest {
         val nonce: String,
         val qop: String? = null,
         val opaque: String? = null,
-        val algorithm: String = "MD5",
+        /**
+         * The algorithm the camera named; null when it named none (MD5 is then used). Echoed in the answer only when
+         * named: some cameras (e.g. TP-Link Tapo) refuse an answer carrying `algorithm=MD5` they did not ask for.
+         */
+        val algorithm: String? = null,
     )
 
     /** The Digest challenge in a `WWW-Authenticate` value, or null (Basic, or a Digest without realm or nonce) */
@@ -28,7 +32,7 @@ public object HttpDigest {
         val nonce = params["nonce"] ?: return null
         // "auth" when offered (possibly next to auth-int, which a SOAP client does not need)
         val qop = params["qop"]?.split(',')?.map { it.trim() }?.let { options -> if ("auth" in options) "auth" else null }
-        return Challenge(realm, nonce, qop, params["opaque"], params["algorithm"] ?: "MD5")
+        return Challenge(realm, nonce, qop, params["opaque"], params["algorithm"])
     }
 
     /** The parameters of a challenge or an Authorization value: comma-separated `name=value` / `name="quoted, value"` pairs, names lower-cased */
@@ -83,7 +87,7 @@ public object HttpDigest {
     ): String {
         val nc = "%08x".format(nonceCount)
         var ha1 = md5("${credentials.username}:${challenge.realm}:${credentials.password}")
-        if (challenge.algorithm.lowercase() == "md5-sess") ha1 = md5("$ha1:${challenge.nonce}:$cnonce")
+        if (challenge.algorithm?.lowercase() == "md5-sess") ha1 = md5("$ha1:${challenge.nonce}:$cnonce")
         val ha2 = md5("$method:$uri")
         val response = if (challenge.qop != null) {
             md5("$ha1:${challenge.nonce}:$nc:$cnonce:${challenge.qop}:$ha2")
@@ -98,7 +102,7 @@ public object HttpDigest {
             if (challenge.qop != null) append(", qop=").append(challenge.qop).append(", nc=").append(nc).append(", cnonce=\"").append(cnonce).append('"')
             append(", response=\"").append(response).append('"')
             challenge.opaque?.let { append(", opaque=\"").append(quote(it)).append('"') }
-            append(", algorithm=").append(challenge.algorithm)
+            challenge.algorithm?.let { append(", algorithm=").append(it) }
         }
     }
 
