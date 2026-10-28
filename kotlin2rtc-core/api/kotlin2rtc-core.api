@@ -1,0 +1,212 @@
+public final class io/github/mafischer/kotlin2rtc/core/AddressNotAllowedException : java/io/IOException {
+	public fun <init> ()V
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/core/Clock {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/core/Clock$Companion;
+	public abstract fun millis ()J
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/Clock$Companion {
+	public final fun getMonotonic ()Lio/github/mafischer/kotlin2rtc/core/Clock;
+	public final fun getSystem ()Lio/github/mafischer/kotlin2rtc/core/Clock;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/Credentials {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/Credentials;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/core/Credentials;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/core/Credentials;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPassword ()Ljava/lang/String;
+	public final fun getUsername ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/HttpDigest {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/core/HttpDigest;
+	public final fun authorization (Lio/github/mafischer/kotlin2rtc/core/HttpDigest$Challenge;Lio/github/mafischer/kotlin2rtc/core/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+	public static synthetic fun authorization$default (Lio/github/mafischer/kotlin2rtc/core/HttpDigest;Lio/github/mafischer/kotlin2rtc/core/HttpDigest$Challenge;Lio/github/mafischer/kotlin2rtc/core/Credentials;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Object;)Ljava/lang/String;
+	public final fun cnonce (Ljava/security/SecureRandom;)Ljava/lang/String;
+	public final fun parameters (Ljava/lang/String;)Ljava/util/Map;
+	public final fun parseChallenge (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/HttpDigest$Challenge;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/HttpDigest$Challenge {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Ljava/lang/String;
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/HttpDigest$Challenge;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/core/HttpDigest$Challenge;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/core/HttpDigest$Challenge;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAlgorithm ()Ljava/lang/String;
+	public final fun getNonce ()Ljava/lang/String;
+	public final fun getOpaque ()Ljava/lang/String;
+	public final fun getQop ()Ljava/lang/String;
+	public final fun getRealm ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/HttpHeaders {
+	public static final field AUTHORIZATION Ljava/lang/String;
+	public static final field CONTENT_TYPE Ljava/lang/String;
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/core/HttpHeaders;
+	public static final field WWW_AUTHENTICATE Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/HttpRequest {
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;[BLjava/lang/Long;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;[BLjava/lang/Long;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun component3 ()Ljava/util/Map;
+	public final fun component4 ()[B
+	public final fun component5 ()Ljava/lang/Long;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;[BLjava/lang/Long;)Lio/github/mafischer/kotlin2rtc/core/HttpRequest;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/core/HttpRequest;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;[BLjava/lang/Long;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/core/HttpRequest;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBody ()[B
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getMethod ()Ljava/lang/String;
+	public final fun getTimeoutMillis ()Ljava/lang/Long;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun header (Ljava/lang/String;)Ljava/lang/String;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/HttpResponse {
+	public fun <init> (ILjava/util/Map;[B)V
+	public synthetic fun <init> (ILjava/util/Map;[BILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun getBody ()[B
+	public final fun getHeaders ()Ljava/util/Map;
+	public final fun getStatus ()I
+	public final fun getText ()Ljava/lang/String;
+	public final fun header (Ljava/lang/String;)Ljava/lang/String;
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/core/HttpTransport {
+	public abstract fun send (Lio/github/mafischer/kotlin2rtc/core/HttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/InetAddresses {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/core/InetAddresses;
+	public final fun literal (Ljava/lang/String;)Ljava/net/InetAddress;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/LanHttpTransport : io/github/mafischer/kotlin2rtc/core/HttpTransport {
+	public static final field MAX_LINE I
+	public static final field RESPONSE_TOO_LARGE Ljava/lang/String;
+	public fun <init> (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;III)V
+	public synthetic fun <init> (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun send (Lio/github/mafischer/kotlin2rtc/core/HttpRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/LinkSubnet {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/core/LinkSubnet$Companion;
+	public fun <init> (Ljava/net/InetAddress;I)V
+	public final fun component1 ()Ljava/net/InetAddress;
+	public final fun component2 ()I
+	public final fun contains (Ljava/net/InetAddress;)Z
+	public final fun copy (Ljava/net/InetAddress;I)Lio/github/mafischer/kotlin2rtc/core/LinkSubnet;
+	public static synthetic fun copy$default (Lio/github/mafischer/kotlin2rtc/core/LinkSubnet;Ljava/net/InetAddress;IILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/core/LinkSubnet;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAddress ()Ljava/net/InetAddress;
+	public final fun getPrefixLength ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/LinkSubnet$Companion {
+	public final fun parse (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/LinkSubnet;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/LocalNetwork {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/core/LocalNetwork$Companion;
+	public fun <init> ()V
+	public fun <init> (Ljava/util/List;)V
+	public synthetic fun <init> (Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun allows (Ljava/net/InetAddress;)Z
+	public final fun allowsCamera (Ljava/net/InetAddress;)Z
+	public final fun describe ()Ljava/lang/String;
+	public final fun getGeneration ()I
+	public final fun getSubnets ()Ljava/util/List;
+	public final fun isConnected ()Z
+	public final fun pick (Ljava/util/List;)Ljava/net/InetAddress;
+	public final fun pickCamera (Ljava/util/List;)Ljava/net/InetAddress;
+	public final fun subnetsChanged (Ljava/util/List;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/LocalNetwork$Companion {
+	public final fun isPrivate (Ljava/net/InetAddress;)Z
+}
+
+public abstract interface class io/github/mafischer/kotlin2rtc/core/Logger {
+	public static final field Companion Lio/github/mafischer/kotlin2rtc/core/Logger$Companion;
+	public fun debug (Ljava/lang/String;)V
+	public fun error (Ljava/lang/String;)V
+	public fun info (Ljava/lang/String;)V
+	public abstract fun log (Lio/github/mafischer/kotlin2rtc/core/Logger$Level;Ljava/lang/String;)V
+	public fun warn (Ljava/lang/String;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/Logger$Companion {
+	public final fun getNone ()Lio/github/mafischer/kotlin2rtc/core/Logger;
+	public final fun stderr (Lio/github/mafischer/kotlin2rtc/core/Logger$Level;)Lio/github/mafischer/kotlin2rtc/core/Logger;
+	public static synthetic fun stderr$default (Lio/github/mafischer/kotlin2rtc/core/Logger$Companion;Lio/github/mafischer/kotlin2rtc/core/Logger$Level;ILjava/lang/Object;)Lio/github/mafischer/kotlin2rtc/core/Logger;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/Logger$DefaultImpls {
+	public static fun debug (Lio/github/mafischer/kotlin2rtc/core/Logger;Ljava/lang/String;)V
+	public static fun error (Lio/github/mafischer/kotlin2rtc/core/Logger;Ljava/lang/String;)V
+	public static fun info (Lio/github/mafischer/kotlin2rtc/core/Logger;Ljava/lang/String;)V
+	public static fun warn (Lio/github/mafischer/kotlin2rtc/core/Logger;Ljava/lang/String;)V
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/Logger$Level : java/lang/Enum {
+	public static final field DEBUG Lio/github/mafischer/kotlin2rtc/core/Logger$Level;
+	public static final field ERROR Lio/github/mafischer/kotlin2rtc/core/Logger$Level;
+	public static final field INFO Lio/github/mafischer/kotlin2rtc/core/Logger$Level;
+	public static final field WARN Lio/github/mafischer/kotlin2rtc/core/Logger$Level;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/Logger$Level;
+	public static fun values ()[Lio/github/mafischer/kotlin2rtc/core/Logger$Level;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/RtspUrls {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/core/RtspUrls;
+	public final fun split (Ljava/lang/String;)Lkotlin/Pair;
+	public final fun withCredentials (Ljava/lang/String;Lio/github/mafischer/kotlin2rtc/core/Credentials;)Ljava/lang/String;
+	public final fun withHost (Ljava/lang/String;Ljava/net/InetAddress;)Ljava/lang/String;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/SoapXml {
+	public static final field INSTANCE Lio/github/mafischer/kotlin2rtc/core/SoapXml;
+	public final fun escape (Ljava/lang/String;)Ljava/lang/String;
+	public final fun parse (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/XmlElement;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/XmlElement {
+	public final fun attribute (Ljava/lang/String;)Ljava/lang/String;
+	public final fun child (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/XmlElement;
+	public final fun children (Ljava/lang/String;)Ljava/util/List;
+	public final fun descendant (Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/XmlElement;
+	public final fun descendants (Ljava/lang/String;)Ljava/util/List;
+	public final fun getChildren ()Ljava/util/List;
+	public final fun getName ()Ljava/lang/String;
+	public final fun getText ()Ljava/lang/String;
+	public final fun path ([Ljava/lang/String;)Lio/github/mafischer/kotlin2rtc/core/XmlElement;
+}
+
+public final class io/github/mafischer/kotlin2rtc/core/XmlParseException : java/lang/Exception {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun getDetail ()Ljava/lang/String;
+}
+
