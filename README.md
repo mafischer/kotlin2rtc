@@ -142,16 +142,41 @@ addresses and identifiers replaced), an in-process fake RTSP camera on loopback 
 
 ## Using it
 
-Until the first release on Maven Central, use a composite build:
+Releases are published as files of [GitHub Releases](https://github.com/mafischer/kotlin2rtc/releases) (jars, sources,
+javadoc, POM and Gradle Module Metadata, which carries each module's dependencies, plus `SHA256SUMS`). Gradle resolves
+them anonymously through an Ivy repository; the dependencies (kotlinx-coroutines, the Kotlin stdlib) come from Maven
+Central:
 
 ```kotlin
-// settings.gradle.kts of your project
-includeBuild("../kotlin2rtc")
+// settings.gradle.kts
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        ivy {
+            name = "kotlin2rtc"
+            url = uri("https://github.com/mafischer/kotlin2rtc/releases/download")
+            patternLayout { artifact("v[revision]/[artifact]-[revision](-[classifier])(.[ext])") }
+            metadataSources { gradleMetadata() }
+            content { includeGroup("io.github.mafischer") }
+        }
+    }
+}
+
 // build.gradle.kts
-dependencies { implementation("io.github.mafischer:kotlin2rtc-onvif:0.1.0-SNAPSHOT") }
+dependencies {
+    implementation("io.github.mafischer:kotlin2rtc-onvif:0.1.0")
+    implementation("io.github.mafischer:kotlin2rtc-rtsp:0.1.0") // brings kotlin2rtc-codec and -core with it
+}
 ```
 
-or `./gradlew publishToMavenLocal` and `mavenLocal()`.
+Pin what you download: Gradle's [dependency verification](https://docs.gradle.org/current/userguide/dependency_verification.html)
+(`./gradlew --write-verification-metadata sha256 help`) or dependency locking, and compare with the release's `SHA256SUMS`.
+
+To work on kotlin2rtc and an app together, use a composite build instead: `includeBuild("../kotlin2rtc")` in the app's
+`settings.gradle.kts` (the version then comes from this checkout).
+
+**Releasing:** push a tag `vX.Y.Z` on `main`; `.github/workflows/release.yml` builds, tests and creates the release with
+its files.
 
 ## Acknowledgements
 

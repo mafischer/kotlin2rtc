@@ -77,6 +77,16 @@ subprojects {
                 description.set(project.description)
             }
         }
+        // The files of a GitHub Release (.github/workflows/release.yml): `publishAllPublicationsToGithubReleaseRepository`
+        // writes a Maven layout into build/github-release-repo, whose files the workflow attaches to the release flat
+        extensions.configure<PublishingExtension> {
+            repositories {
+                maven {
+                    name = "githubRelease"
+                    url = uri(rootProject.layout.buildDirectory.dir("github-release-repo"))
+                }
+            }
+        }
     }
 }
 
